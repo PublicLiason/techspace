@@ -8,9 +8,6 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    
-  },
   "dependencies": {
     "twitter-api-v2": "^1.10.0",
     "dotenv": "^16.0.0"
