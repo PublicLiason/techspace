@@ -30,7 +30,7 @@ customEvent.on('f_error', (id, next_token) => {
     get_followers(id, next_token)  
 })
 
-const user = new TwitterApi({
+/* const user = new TwitterApi({
     appKey: api_key,
     appSecret: api_key_secret,
     accessToken: access_token,
@@ -97,7 +97,7 @@ async function get_followers(id, pag_token) {
     } catch (error) {
         customEvent.emit('f_error', id, next_token)
     }
-}
+} */
 
 // get_followers('161801527', undefined)
 
