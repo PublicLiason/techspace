@@ -79,7 +79,7 @@ async function get_followers(id, pag_token) {
         for (const stuff in followers_pagin.data) {
             if (stuff === 'data' ) {
                 let {data} = followers_pagin.data
-                stream_1.write(`${JSON.stringify(data)} \n`, error => console.error(error))
+                stream_1.write(`${JSON.stringify(data)}, \n`, error => console.error(error))
             }
         }
         
@@ -88,7 +88,7 @@ async function get_followers(id, pag_token) {
             for (const stuff in followers_pagin.data) {
                 if (stuff === 'data' ) {
                     let {data} = followers_pagin.data
-                    stream_1.write(`${JSON.stringify(data)} \n`, error => console.error(error))
+                    stream_1.write(`${JSON.stringify(data)}, \n`, error => console.error(error))
                 }
             }
             
@@ -99,4 +99,6 @@ async function get_followers(id, pag_token) {
     }
 }
 
-get_followers('161801527', undefined)
+// get_followers('161801527', undefined)
+
+console.log({api_key, api_key_secret, bearer, access_token, access_token_secret})
