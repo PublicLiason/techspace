@@ -5,11 +5,11 @@ const {stream_1} = require('./add-file-test')
  
 // const data = require('./test-file.json')
 
-const api_key = process.env.API_KEY
-const api_key_secret = process.env.API_KEY_SECRET
-const bearer = process.env.BEARER_TOKEN
-const access_token = process.env.ACCESS_TOKEN
-const access_token_secret = process.env.ACCESS_TOKEN_SECRET
+const api_key = process.env.API_Key
+const api_key_secret = process.env.API_Key_Secret
+const bearer = process.env.Bearer_Token
+const access_token = process.env.Access_Token
+const access_token_secret = process.env.Access_Token_Secret
 
 const customEvent = new EventEmitter()
 customEvent.on('dm_Error', (error, ids, text, curr_id) => {
