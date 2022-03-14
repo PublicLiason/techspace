@@ -101,4 +101,4 @@ async function get_followers(id, pag_token) {
 
 // get_followers('161801527', undefined)
 
-console.log({api_key, api_key_secret, bearer, access_token, access_token_secret})
+console.trace({api_key, api_key_secret, bearer, access_token, access_token_secret})
