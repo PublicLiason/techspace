@@ -1,1 +1,1 @@
-worker: node new-test.js
+worker: node tech-space.js
