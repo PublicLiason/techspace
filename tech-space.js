@@ -1,7 +1,6 @@
 const { ETwitterStreamEvent, TweetStream, TwitterApi, ETwitterApiError, UserFollowersV2Paginator } = require("twitter-api-v2")
 require('dotenv').config()
 const {EventEmitter} = require('events')
-const {stream_1} = require('./add-file-test')
 const {client, createUser} = require('./database')
  
 // const data = require('./test-file.json')
