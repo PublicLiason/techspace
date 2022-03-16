@@ -2,6 +2,7 @@ const { ETwitterStreamEvent, TweetStream, TwitterApi, ETwitterApiError, UserFoll
 require('dotenv').config()
 const {EventEmitter} = require('events')
 const {stream_1} = require('./add-file-test')
+const {client, createUser} = require('./database')
  
 // const data = require('./test-file.json')
 
@@ -74,12 +75,21 @@ async function sendDM(ids_arr, text) {
 async function get_followers(id, pag_token) {
     let followers_pagin = await app.v2.followers(id, {asPaginator: true, max_results: 1000, pagination_token: pag_token})
     let next_token
+    let count = 0
     
     try {
         for (const stuff in followers_pagin.data) {
             if (stuff === 'data' ) {
                 let {data} = followers_pagin.data
-                stream_1.write(`${JSON.stringify(data)}, \n`, error => console.error(error))
+                createUser({
+                    client,
+                    db: 'twitter-people',
+                    collection: 'users',
+                    newDoc: {
+                        peopleArr: data,
+                        count_id: count++
+                    }
+                })
             }
         }
         
@@ -88,7 +98,15 @@ async function get_followers(id, pag_token) {
             for (const stuff in followers_pagin.data) {
                 if (stuff === 'data' ) {
                     let {data} = followers_pagin.data
-                    stream_1.write(`${JSON.stringify(data)}, \n`, error => console.error(error))
+                    createUser({
+                        client,
+                        db: 'twitter-people',
+                        collection: 'users',
+                        newDoc: {
+                            peopleArr: data,
+                            count_id: count++
+                        }
+                    })
                 }
             }
             
