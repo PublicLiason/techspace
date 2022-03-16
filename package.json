@@ -8,13 +8,11 @@
     "start": "node tech-space.js"
   },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "dotenv": "^16.0.0"
-  },
+  "license": "ISC",  
   "dependencies": {
     "dotenv": "^16.0.0",
     "mongodb": "^4.4.1",
     "twitter-api-v2": "^1.10.0"
   }
 }
+
